@@ -12,4 +12,4 @@ missing cases, or prior art I should read.
 
 **Not legal advice.** This is a technical record format, not a court.
 
-Licence: to be chosen by the author before publishing (Apache-2.0 or MIT are common for open specs).
+Licence: Apache-2.0 (see the LICENSE file).
