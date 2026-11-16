@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/agentdeal/v0.1/receipt.schema.json",
+  "title": "AgentDeal Receipt v0.1",
+  "type": "object",
+  "required": ["agentdeal_version", "receipt_id", "contract_hash", "outcome", "closed_at", "notary_signature"],
+  "properties": {
+    "agentdeal_version": { "const": "0.1" },
+    "receipt_id": { "type": "string", "format": "uuid" },
+    "contract_hash": { "$ref": "#/$defs/hash" },
+    "delivery_hash": { "$ref": "#/$defs/hash" },
+    "verification_hash": { "$ref": "#/$defs/hash" },
+    "verdict_hash": { "$ref": "#/$defs/hash" },
+    "prev_receipt_hash": { "$ref": "#/$defs/hash" },
+    "outcome": { "enum": ["accepted", "ruled_for_buyer", "ruled_for_seller", "ruled_split", "expired", "cancelled"] },
+    "refund_pct": { "type": "integer", "minimum": 0, "maximum": 100 },
+    "closed_at": { "type": "string", "format": "date-time" },
+    "notary_signature": {
+      "type": "object",
+      "required": ["signer", "alg", "value"],
+      "properties": {
+        "signer": { "type": "string" },
+        "alg": { "const": "Ed25519" },
+        "value": { "type": "string", "minLength": 20 }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "hash": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,39 @@
+{
+  "agentdeal_version": "0.1",
+  "contract_id": "3f6c1b52-8d1e-4c0a-9b7e-1a2b3c4d5e6f",
+  "created": "2026-11-16T14:00:00Z",
+  "deadline": "2026-11-16T14:10:00Z",
+  "dispute_window_hours": 24,
+  "parties": [
+    {
+      "id": "agent-a@company-a.example",
+      "role": "buyer",
+      "organization": "Company A",
+      "agent_card_url": "https://company-a.example/.well-known/agent-card.json",
+      "public_key": "EXAMPLE_PUBLIC_KEY_BASE64URL_A_PLACEHOLDER"
+    },
+    {
+      "id": "agent-b@company-b.example",
+      "role": "seller",
+      "organization": "Company B",
+      "agent_card_url": "https://company-b.example/.well-known/agent-card.json",
+      "public_key": "EXAMPLE_PUBLIC_KEY_BASE64URL_B_PLACEHOLDER"
+    }
+  ],
+  "subject": "French translation of a 150-word product presentation text, formal tone.",
+  "price": { "amount": 20, "currency": "EUR" },
+  "criteria": [
+    { "id": "C1", "text": "The text is written entirely in French.", "verification": "independent_verifier" },
+    { "id": "C2", "text": "The register is formal (vouvoiement, no slang).", "verification": "independent_verifier" },
+    { "id": "C3", "text": "The length is between 130 and 170 words.", "verification": "automated" }
+  ],
+  "remedy": {
+    "description": "Full refund if no criterion is met, otherwise as ruled by the panel.",
+    "refund_pct_if_nonconforming": 100
+  },
+  "notary": { "id": "notary.example", "public_key": "EXAMPLE_NOTARY_PUBLIC_KEY_PLACEHOLDER" },
+  "signatures": [
+    { "signer": "agent-a@company-a.example", "alg": "Ed25519", "value": "EXAMPLE_SIGNATURE_PLACEHOLDER_A" },
+    { "signer": "agent-b@company-b.example", "alg": "Ed25519", "value": "EXAMPLE_SIGNATURE_PLACEHOLDER_B" }
+  ]
+}

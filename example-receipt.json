@@ -1,0 +1,12 @@
+{
+  "agentdeal_version": "0.1",
+  "receipt_id": "9a7d2e10-55b3-4f0c-8a11-0c2d3e4f5a6b",
+  "contract_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000001",
+  "delivery_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000002",
+  "verification_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000003",
+  "verdict_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000004",
+  "outcome": "ruled_split",
+  "refund_pct": 50,
+  "closed_at": "2026-11-17T14:30:00Z",
+  "notary_signature": { "signer": "notary.example", "alg": "Ed25519", "value": "EXAMPLE_NOTARY_SIGNATURE_PLACEHOLDER" }
+}
